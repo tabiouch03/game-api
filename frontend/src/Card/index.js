@@ -1,6 +1,33 @@
 import React, { Component } from 'react';
 import '../App.css';
+import Container from '@material-ui/core/Container';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import CardActions from '@material-ui/core/CardActions';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import IconButton from '@material-ui/core/IconButton';
 
+
+const styles = {
+  root: {
+    width: 400,
+    flexGrow: 1,
+    marginTop: 50,
+    marginBottom: 10,
+  },
+  media: {
+    height: 150,
+    paddingTop: 320,
+  },
+  space: {
+    padding: 5,
+    textAlign: 'center',
+  }
+}
 
 
 class Carte extends Component {
@@ -19,25 +46,47 @@ class Carte extends Component {
   }
 
   render() {
-    const { post } = this.state 
+    const { post } = this.state
     const postSTR = JSON.stringify(post)
     return (
       <div>
-      {postSTR !== '{}' ?
-      <div>
-      {post.map((item, index) => (
-        <div key={index}>
-          <img className="cover" src={item.cover}></img>
-          <p>{item.name}</p>
-          <p>{item.prix}€</p>
-          </div> 
-      ))}
+        <Container maxWidth="lg" >
+          {postSTR !== '{}' ?
+            <div>
+              <Grid container alignItems="flex-start" justify="flex-center">
+                {post.map((item, index) => (
+                  <div key={index}>
+                    <Grid item xs={8} className={this.props.classes.space}>
+                      <Card className={this.props.classes.root}>
+                        <CardMedia
+                          className={this.props.classes.media}
+                          image={item.cover}
+                          title={item.name} />
+                        <CardContent>
+                          <h3>{item.name}</h3>
+                          <h5>Genre : {item.genre}</h5>
+                          <p>Prix : {item.prix}€</p>
+                          <CardActions disableSpacing>
+                            <IconButton aria-label="add to favorites">
+                              <FavoriteIcon />
+                            </IconButton>
+                            <IconButton aria-label="share">
+                              <ShareIcon />
+                            </IconButton>
+                          </CardActions>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  </div>
+                ))}
+              </Grid>
+            </div>
+            : null
+          }
+        </Container>
       </div>
-      : null
-    }
-    </div>
     );
   }
 }
 
-export default Carte;
+export default withStyles(styles)(Carte);
