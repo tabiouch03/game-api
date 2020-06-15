@@ -16,8 +16,9 @@ const styles = {
   root: {
     width: 400,
     flexGrow: 1,
-    marginTop: 50,
-    marginBottom: 10,
+    marginTop: 25,
+    marginBottom: 25,
+    boxShadow: '0 3px 5px 2px rgba(0, 0, 0, .3)',
   },
   media: {
     height: 150,
@@ -30,7 +31,7 @@ const styles = {
 }
 
 
-class Carte extends Component {
+class Cards extends Component {
   state = {
     post: {}
   }
@@ -89,4 +90,4 @@ class Carte extends Component {
   }
 }
 
-export default withStyles(styles)(Carte);
+export default withStyles(styles)(Cards);
