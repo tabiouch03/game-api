@@ -1,0 +1,60 @@
+.screen1 {
+  background-image: url(./images/screen1.png);
+  height: 500px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'Lobster', cursive;
+  padding-left: 15%;
+  padding-top: 10%;
+}
+
+.screen2 {
+  background-image: url(./images/screen2.png);
+  height: 500px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'Lobster', cursive;
+}
+
+.animate__backInLeft {
+  font-size: 4vh;
+}
+
+.animate__backInRight {
+  font-size: 4vh;
+}
+
+i {
+  color: black;
+}
+
+#arrow {
+  text-decoration: none;
+  color: black;
+  font-size: 4vh;
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+}
+
+.landing {
+  font-family: 'Lobster', cursive;
+}
+
+#box3 {
+  font-family: 'Lobster', cursive;
+}
+
+@media screen and (max-width: 710px) {
+  .box {
+    margin-top: -240px;
+  }
+  .landing {
+    margin-top: -150px;
+    float: none;
+  }
+}
