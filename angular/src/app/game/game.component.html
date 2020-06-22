@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row d-flex justify-content-center mt-3">
+    <div *ngFor="let game of games">
+      <div class="card m-1" style="width: 18rem;">
+        <img class="card-img-top" src="{{game.cover}}" alt="{{game.name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{game.name}}</h5>
+          <p class="card-text">Genre : {{game.genre}}</p>
+          <p class="card-text">Prix : {{game.prix}}€</p>
+          <a href="/games/{{game._id}}" class="btn btn-primary">Voir le jeu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container d-flex justify-content-center mt-3 mb-3">
+  <div class="card" style="width: 36rem;">
+    <div class="card-body border rounded-top bg-dark text-white text-center">
+      <h4 class="card-text text-warning">{{currentGame.name}}</h4>
+    </div>
+    <img class="card-img-top border" src="{{currentGame.cover}}" alt="Card image cap">
+    <div class="card-body border rounded-bottom bg-dark text-white text-center">
+      <p class="card-text">{{currentGame.description}}</p>
+      <span>Jeu crée le :<em> {{currentGame.created_at | date:'mediumDate' : 'fr-FR'}}</em></span>
+      <br>
+      <a href="/delete/{{currentGame._id}}" class="badge border badge-danger">Supprimer le jeu</a>
+      <a href="/games" class="badge ml-1 border badge-warning">Modifier le jeu</a>
+      <br>
+      <a href="/games" class="badge border badge-primary mt-2">
+        <i class="fas fa-home text-white"></i>
+      </a>
+    </div>
+  </div>
+
+</div>

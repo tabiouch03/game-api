@@ -7,7 +7,7 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 // Connexion a la base de donné MongoDB
-mongoose.connect('mongodb+srv://tabiouch:<pass>@cluster0-wtqox.mongodb.net/api',
+mongoose.connect('mongodb+srv://tabiouch:sanchez0311@cluster0-wtqox.mongodb.net/api',
 { useNewUrlParser: true,
   useUnifiedTopology: true
 })

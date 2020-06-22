@@ -1,0 +1,16 @@
+<div class="container text-center">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary rounded-bottom">
+    <a routerLink="games">
+      <div class="navbar-brand text-light">{{title}}</div>
+    </a>
+    <div class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a routerLink="games" class="nav-link text-light">Liste des jeux</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link text-light">Ajouter un jeu</a>
+      </li>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>
